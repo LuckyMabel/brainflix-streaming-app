@@ -1,0 +1,29 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.avatar {
+  background-color: $sec-mercury;
+  width: 2.25rem;
+  height: 2.25rem;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @include tablet {
+    width: 2.5rem;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+  }
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+
+    &:not([src]) {
+      display: none;
+    }
+  }
+}
