@@ -1,0 +1,1 @@
+import "./NextVideo.scss";

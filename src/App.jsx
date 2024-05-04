@@ -6,6 +6,7 @@ import videoDetails from "./data/video-details.json";
 import Header from "./components/Header/Header.jsx";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer.jsx";
 import VideoDetails from "./components/VideoDetails/VideoDetails.jsx";
+import NextVideosList from "./components/NextVideosList/NextVideosList.jsx";
 
 function App() {
   const [activeVideo, setActiveVideo] = useState(videoDetails[0]);
