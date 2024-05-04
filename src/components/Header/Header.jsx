@@ -9,13 +9,13 @@ import Button from "../Button/Button";
 function Header() {
   return (
     <header className="header">
-      <div className="header__logo">
+      <a className="header__logo" href="./">
         <img
           className="header__logo-image"
           src={logoImage}
           alt="Brainflix Logo"
         />
-      </div>
+      </a>
       <nav className="header__navbar">
         <div className="header__search">
           <img

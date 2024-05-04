@@ -1,0 +1,121 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.video-details {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  @include tablet {
+    padding-top: $tablet-padding;
+    padding-bottom: 0;
+    margin: 0 1.5rem;
+  }
+
+  @include desktop {
+    border-right: 1px solid $sec-mercury;
+    padding-bottom: $desktop-padding;
+  }
+
+  &__title {
+    padding-top: 1.5rem;
+    border-bottom: 1px solid $sec-mercury;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: $pri-black;
+
+    @include tablet {
+      span {
+        display: none;
+      }
+      padding-bottom: 0;
+      border: none;
+      font-size: 33px;
+      line-height: 44px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    border-bottom: 1px solid $sec-mercury;
+
+    @include tablet {
+      justify-content: space-between;
+      padding-bottom: 0.5rem;
+      padding-top: 1rem;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    @include desktop {
+      padding-right: $tablet-space-between;
+      padding-top: 0.75rem;
+    }
+  }
+
+  &__info-container {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+    justify-content: space-between;
+    color: $pri-silver;
+    flex: 1;
+
+    > * {
+      align-items: center;
+      display: flex;
+    }
+
+    @include tablet {
+      flex-direction: row;
+      flex: none;
+      padding-right: 0;
+    }
+  }
+
+  &__channel {
+    color: $pri-black;
+    padding-bottom: 1rem;
+    font-weight: 600;
+
+    @include tablet {
+      padding-bottom: 0;
+      padding-right: $tablet-space-between;
+    }
+  }
+
+  &__icon {
+    padding-right: 0.5rem;
+  }
+
+  &__views {
+    padding-bottom: 1rem;
+
+    @include tablet {
+      padding-bottom: 0;
+      padding-right: $tablet-space-between;
+    }
+  }
+
+  &__description {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    padding: 1rem 0;
+
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    @include desktop {
+      padding-right: $tablet-space-between;
+    }
+  }
+}
