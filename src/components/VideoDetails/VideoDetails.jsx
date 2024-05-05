@@ -1,18 +1,17 @@
 import "./VideoDetails.scss";
-import viewicone from "../../assets/icons/views.svg";
-import likeicone from "../../assets/icons/likes.svg";
+import viewsIcon from "../../assets/icons/views.svg";
+import likesIcon from "../../assets/icons/likes.svg";
 
 function VideoDetails({ videoInfo }) {
   const { title, channel, timestamp, views, likes, description, comments } =
     videoInfo;
 
   function formattedDate(timestamp) {
-    let date = new Date(timestamp);
-    console.log(date);
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
-    return `${month}/${day}/${year}`;
+    const date = new Date(timestamp);
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+    return month + "/" + day + "/" + year;
   }
 
   return (
@@ -29,7 +28,7 @@ function VideoDetails({ videoInfo }) {
           <div className="video-details__views">
             <img
               className="video-details__icon"
-              src={viewicone}
+              src={viewsIcon}
               alt="Views Icon"
             />
             {views}
@@ -37,7 +36,7 @@ function VideoDetails({ videoInfo }) {
           <div className="video-details__likes">
             <img
               className="video-details__icon"
-              src={likeicone}
+              src={likesIcon}
               alt="Likes Icon"
             />
             {likes}

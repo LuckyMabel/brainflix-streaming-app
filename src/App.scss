@@ -15,19 +15,18 @@
   background-color: $pri-white;
   display: flex;
   flex-direction: column;
-}
 
-main {
-  padding: 0 1.1rem;
-  display: flex;
-  flex-direction: column;
+  &__main {
+    padding: 0 1.1rem;
 
-  @include tablet {
-    padding: 0 2.4rem;
-  }
+    @include tablet {
+      padding: 0 2.4rem;
+    }
 
-  @include desktop {
-    padding: 0 $desktop-padding;
-    flex-direction: row;
+    @include desktop {
+      padding: 0 $desktop-padding;
+      display: flex;
+      flex-direction: row;
+    }
   }
 }

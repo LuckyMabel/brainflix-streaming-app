@@ -11,10 +11,12 @@ import NextVideosList from "./components/NextVideosList/NextVideosList.jsx";
 function App() {
   const [activeVideo, setActiveVideo] = useState(videoDetails[0]);
 
-  function updateActiveVideo(clickedId) {
-    const newActiveVideo = videoDetails.find((video) => video.id === clickedId);
+  const updateActiveVideo = (selectedId) => {
+    const newActiveVideo = videoDetails.find(
+      (video) => video.id === selectedId
+    );
     setActiveVideo(newActiveVideo);
-  }
+  };
 
   const filteredVideosList = videos.filter(
     (video) => video.id !== activeVideo.id

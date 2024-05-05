@@ -30,7 +30,7 @@ function Header() {
           <Avatar avatarSrc={userAvatar} />
         </div>
         <div className="header__button">
-          <Button iconSrc={uploadIcon} text="upload" />
+          <Button iconSrc={uploadIcon} text="Upload" />
         </div>
       </nav>
     </header>
