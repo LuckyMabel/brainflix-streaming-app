@@ -1,6 +1,7 @@
 import "./VideoDetails.scss";
 import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
+import CommentSection from "../CommentSection/CommentSection";
 
 function VideoDetails({ videoInfo }) {
   const { title, channel, timestamp, views, likes, description, comments } =
@@ -46,7 +47,10 @@ function VideoDetails({ videoInfo }) {
 
       <div className="video-details__description">{description}</div>
 
-      {/* Comments */}
+      <div className="video-details__comment-num">
+        {comments ? comments.length : 0} Comments
+      </div>
+      <CommentSection commentsList={comments} />
     </section>
   );
 }

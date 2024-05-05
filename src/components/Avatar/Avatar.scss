@@ -21,5 +21,9 @@
     height: 100%;
     object-fit: cover;
     object-position: left;
+
+    &:not([src]) {
+      display: none;
+    }
   }
 }

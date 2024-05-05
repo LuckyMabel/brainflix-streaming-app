@@ -19,16 +19,17 @@ function Header() {
       <nav className="header__navbar">
         <div className="header__search">
           <img
-            className="header__search--icon"
+            className="header__search-icon"
             src={searchIcon}
             alt="Search Icon"
           />
-          <input className="header__search--input" placeholder="Search" />
+          <input className="header__search-input" placeholder="Search" />
         </div>
 
         <div className="header__avatar">
           <Avatar avatarSrc={userAvatar} />
         </div>
+
         <div className="header__button">
           <Button iconSrc={uploadIcon} text="Upload" />
         </div>

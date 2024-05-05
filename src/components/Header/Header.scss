@@ -69,14 +69,14 @@
       padding-right: $tablet-space-between;
     }
 
-    &--icon {
+    &-icon {
       position: absolute;
       left: 0.75rem;
       top: 0.6rem;
       color: $pri-black;
     }
 
-    &--input {
+    &-input {
       border: 1px solid $sec-mercury;
       background-color: $sec-alabaster;
       border-radius: 0.25rem;
