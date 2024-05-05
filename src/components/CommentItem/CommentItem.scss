@@ -1,0 +1,79 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comment {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 0;
+
+  @include tablet {
+    padding: 1.5rem 0;
+  }
+
+  @include desktop {
+    padding-left: 0.6rem;
+    padding-right: $desktop-space-between;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.2rem;
+    width: 100%;
+
+    @include tablet {
+      padding-left: 1.3rem;
+    }
+
+    @include desktop {
+      padding-left: 2.3rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name {
+    font-size: 0.99rem;
+    font-weight: 600;
+    color: $pri-black;
+
+    @include tablet {
+      font-size: 0.94rem;
+    }
+
+    @include desktop {
+      font-size: 0.88rem;
+    }
+  }
+
+  &__date {
+    font-size: 0.96rem;
+    color: $pri-silver;
+
+    @include tablet {
+      font-size: 0.91rem;
+    }
+
+    @include desktop {
+      font-size: 0.86rem;
+    }
+  }
+
+  &__text {
+    padding: 0.5rem 0 0 0;
+    font-size: 0.96rem;
+    color: $pri-black;
+
+    @include tablet {
+      font-size: 0.925rem;
+    }
+
+    @include desktop {
+      font-size: 0.865rem;
+    }
+  }
+}

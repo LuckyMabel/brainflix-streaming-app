@@ -17,14 +17,14 @@
   flex-direction: column;
 
   &__main {
-    padding: 0 1.1rem;
+    padding: 0 1.2rem;
 
     @include tablet {
       padding: 0 2.4rem;
     }
 
     @include desktop {
-      padding: 0 $desktop-padding;
+      padding: 0 1rem;
       display: flex;
       flex-direction: row;
     }

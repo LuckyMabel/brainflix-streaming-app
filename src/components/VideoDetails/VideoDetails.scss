@@ -5,17 +5,11 @@
 .video-details {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-
-  @include tablet {
-    padding-top: $tablet-padding;
-    padding-bottom: 0;
-    margin: 0 1.5rem;
-  }
 
   @include desktop {
-    border-right: 1px solid $sec-mercury;
+    border-right: 1.5px solid $sec-mercury;
     padding-bottom: $desktop-padding;
+    padding-left: 7.2rem;
     width: 65%;
   }
 
@@ -117,6 +111,21 @@
 
     @include desktop {
       padding-right: $tablet-space-between;
+    }
+  }
+
+  &__comment-num {
+    font-size: 1rem;
+    color: $pri-black;
+    font-weight: 600;
+    padding-bottom: 1.2rem;
+
+    @include tablet {
+      font-size: 0.95rem;
+    }
+
+    @include desktop {
+      font-size: 0.92rem;
     }
   }
 }

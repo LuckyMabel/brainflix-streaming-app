@@ -14,7 +14,7 @@ const CommentSection = ({ commentsList }) => (
       <div className="comment-form__body">
         <div className="comment-form__title">JOIN THE CONVERSATION</div>
         <div className="comment-form__input">
-          <input
+          <textarea
             id="comment-text"
             name="text"
             placeholder="Add a new comment"
