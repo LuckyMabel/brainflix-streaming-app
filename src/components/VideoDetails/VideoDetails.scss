@@ -16,6 +16,7 @@
   @include desktop {
     border-right: 1px solid $sec-mercury;
     padding-bottom: $desktop-padding;
+    width: 65%;
   }
 
   &__title {

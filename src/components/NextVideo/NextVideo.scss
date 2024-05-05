@@ -1,2 +1,67 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.next-video {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+
+  @include tablet {
+    padding-top: $tablet-space-between;
+  }
+
+  &__image {
+    width: 7.8rem;
+    margin-right: 1.28rem;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 0.25rem;
+    background-color: $sec-mercury;
+
+    @include tablet {
+      width: 7.35rem;
+      margin-right: 1rem;
+    }
+
+    @include desktop {
+      width: 6.7rem;
+    }
+  }
+  &__info {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $pri-black;
+
+    @include tablet {
+      width: 12rem;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 1.25rem;
+    font-size: 1rem;
+
+    @include tablet {
+      font-size: 0.95rem;
+    }
+
+    @include desktop {
+      font-size: 0.88rem;
+    }
+  }
+
+  &__channel {
+    font-size: 0.98rem;
+
+    @include tablet {
+      font-size: 0.94rem;
+    }
+
+    @include desktop {
+      font-size: 0.85rem;
+    }
+  }
+}
