@@ -105,6 +105,7 @@
     width: 100%;
     padding-left: 2.25rem;
     height: 2.8rem;
+    font-family: "AvenirNextLTPro";
 
     @include tablet {
       padding: 1rem;
@@ -121,5 +122,6 @@
 
   ::placeholder {
     color: $pri-black;
+    font-family: "AvenirNextLTPro";
   }
 }
