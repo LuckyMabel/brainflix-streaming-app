@@ -3,7 +3,7 @@
 @import "../../styles/partials/fonts";
 
 .header {
-  padding: 1rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -12,12 +12,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 $tablet-padding;
+    padding: 0 2.4rem;
     margin-bottom: 1rem;
   }
 
   @include desktop {
-    padding: 0 $desktop-padding;
+    padding: 0 9rem;
   }
 
   &__navbar {
@@ -42,6 +42,22 @@
     max-height: 1.563rem;
     align-items: center;
     cursor: pointer;
+
+    @include tablet {
+      padding-top: 1rem;
+    }
+
+    @include desktop {
+      margin-left: -0.9rem;
+    }
+  }
+
+  &__logo-image {
+    width: 37%;
+
+    @include tablet {
+      width: 120%;
+    }
   }
 
   &__avatar {
@@ -60,42 +76,50 @@
 
   &__search {
     position: relative;
-    width: calc(100% - 4rem);
+    width: calc(100% - 3.85rem);
     padding-right: 1rem;
     box-sizing: content-box;
 
     @include tablet {
-      width: 15rem;
+      width: 16rem;
       padding-right: $tablet-space-between;
     }
 
-    &-icon {
-      position: absolute;
-      left: 0.75rem;
-      top: 0.6rem;
-      color: $pri-black;
+    @include desktop {
+      width: 15.4rem;
     }
+  }
 
-    &-input {
-      border: 1px solid $sec-mercury;
-      background-color: $sec-alabaster;
-      border-radius: 0.25rem;
-      padding: 0.75rem;
-      width: 100%;
+  &__search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 0.6rem;
+    color: $pri-black;
+  }
+
+  &__search-input {
+    border: 1px solid $sec-mercury;
+    background-color: $sec-alabaster;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    width: 100%;
+    padding-left: 2.25rem;
+    height: 2.8rem;
+
+    @include tablet {
+      padding: 1rem;
       padding-left: 2.25rem;
-      height: 2.25rem;
-
-      @include tablet {
-        padding: 1rem;
-        padding-left: 2.25rem;
-        height: 2.5rem;
-      }
-
-      &:active,
-      &:focus {
-        border: 1px solid $pri-blue;
-        outline: none;
-      }
+      height: 2.5rem;
     }
+
+    &:active,
+    &:focus {
+      border: 1px solid $pri-blue;
+      outline: none;
+    }
+  }
+
+  ::placeholder {
+    color: $pri-black;
   }
 }

@@ -6,6 +6,10 @@
   display: flex;
   flex-direction: column;
 
+  @include tablet {
+    margin-top: 1.8rem;
+  }
+
   @include desktop {
     border-right: 1.5px solid $sec-mercury;
     padding-bottom: $desktop-padding;
@@ -14,43 +18,37 @@
   }
 
   &__title {
-    padding-top: 1.5rem;
+    padding: 1.4rem 0;
     border-bottom: 1px solid $sec-mercury;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.835rem;
     font-weight: 700;
     color: $pri-black;
+    line-height: 2.5rem;
 
     @include tablet {
-      span {
-        display: none;
-      }
       padding-bottom: 0;
       border: none;
-      font-size: 33px;
-      line-height: 44px;
+      font-size: 2.165rem;
+    }
+
+    @include desktop {
+      font-size: 2.02rem;
     }
   }
 
   &__info {
     display: flex;
     flex-direction: row;
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
     border-bottom: 1px solid $sec-mercury;
 
     @include tablet {
       justify-content: space-between;
-      padding-bottom: 0.5rem;
       padding-top: 1rem;
-      font-size: 14px;
-      line-height: 22px;
     }
 
     @include desktop {
       padding-right: $tablet-space-between;
-      padding-top: 0.75rem;
+      padding-top: 0;
     }
   }
 
@@ -61,16 +59,31 @@
     justify-content: space-between;
     color: $pri-silver;
     flex: 1;
+    padding: 1.2rem 0;
 
     > * {
       align-items: center;
       display: flex;
+      font-size: 0.98rem;
+
+      @include tablet {
+        font-size: 0.8rem;
+      }
+
+      @include desktop {
+        font-size: 0.75rem;
+      }
     }
 
     @include tablet {
       flex-direction: row;
       flex: none;
       padding-right: 0;
+      padding-bottom: 0.75rem;
+    }
+
+    @include desktop {
+      padding: 1rem 0;
     }
   }
 
@@ -78,15 +91,26 @@
     color: $pri-black;
     padding-bottom: 1rem;
     font-weight: 600;
+    font-size: 1.01rem;
 
     @include tablet {
       padding-bottom: 0;
-      padding-right: $tablet-space-between;
+      padding-right: 2rem;
+      font-size: 0.97rem;
+    }
+
+    @include desktop {
+      font-size: 0.88rem;
     }
   }
 
   &__icon {
     padding-right: 0.5rem;
+    padding-left: 0.8rem;
+
+    @include desktop {
+      padding-left: 0;
+    }
   }
 
   &__views {
@@ -99,18 +123,20 @@
   }
 
   &__description {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-    padding: 1rem 0;
+    font-size: 0.98rem;
+    line-height: 1.5rem;
+    padding: 1.2rem 0;
+    color: $pri-black;
 
     @include tablet {
-      font-size: 14px;
-      line-height: 22px;
+      font-size: 0.925rem;
+      padding-right: 2rem;
+      padding-bottom: 1.6rem;
     }
 
     @include desktop {
       padding-right: $tablet-space-between;
+      font-size: 0.865rem;
     }
   }
 
