@@ -3,7 +3,7 @@
 
 .comment-section {
   > * {
-    border-bottom: 2px solid $sec-mercury;
+    border-bottom: 0.063rem solid $sec-mercury;
 
     @include desktop {
       &:last-child {
@@ -78,9 +78,11 @@
 
     textarea {
       background-color: $sec-alabaster;
+      font-family: "AvenirNextLTPro";
+      font-size: 0.98rem;
       padding: 0.75rem;
-      border: 1px solid $sec-mercury;
-      border-radius: 4px;
+      border: 0.063rem solid $sec-mercury;
+      border-radius: 0.25rem;
       height: 7.5rem;
       margin-bottom: 1.2rem;
       resize: none;
@@ -88,19 +90,20 @@
       @include tablet {
         padding: 1rem;
         height: 2.8rem;
-        width: 30.4rem;
+        width: 80%;
         min-height: 2.5rem;
         margin-right: 1.65rem;
         margin-bottom: 0;
       }
 
       @include desktop {
-        width: 25.6rem;
+        width: 74%;
+        font-size: 0.87rem;
       }
 
       &:active,
       &:focus {
-        border: 1px solid $pri-blue;
+        border: 0.063rem solid $pri-blue;
         outline: none;
       }
     }

@@ -7,11 +7,11 @@
   background-color: $sec-darkblack;
 
   @include tablet {
-    height: 400px;
+    height: 25rem;
   }
 
   @include desktop {
-    height: 500px;
+    height: 31.25rem;
   }
 
   video {

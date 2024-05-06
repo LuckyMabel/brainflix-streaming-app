@@ -98,7 +98,7 @@
   }
 
   &__search-input {
-    border: 1px solid $sec-mercury;
+    border: 0.063rem solid $sec-mercury;
     background-color: $sec-alabaster;
     border-radius: 0.25rem;
     padding: 0.75rem;
@@ -114,7 +114,7 @@
 
     &:active,
     &:focus {
-      border: 1px solid $pri-blue;
+      border: 0.063rem solid $pri-blue;
       outline: none;
     }
   }

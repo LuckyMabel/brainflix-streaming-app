@@ -11,7 +11,7 @@
   }
 
   @include desktop {
-    border-right: 1.5px solid $sec-mercury;
+    border-right: 0.063rem solid $sec-mercury;
     padding-bottom: $desktop-padding;
     padding-left: 7.2rem;
     width: 65%;
@@ -19,7 +19,7 @@
 
   &__title {
     padding: 1.4rem 0;
-    border-bottom: 1px solid $sec-mercury;
+    border-bottom: 0.063rem solid $sec-mercury;
     font-size: 1.835rem;
     font-weight: 700;
     color: $pri-black;
@@ -39,7 +39,7 @@
   &__info {
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid $sec-mercury;
+    border-bottom: 0.063rem solid $sec-mercury;
 
     @include tablet {
       justify-content: space-between;
