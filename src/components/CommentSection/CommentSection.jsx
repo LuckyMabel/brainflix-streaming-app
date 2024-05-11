@@ -23,9 +23,10 @@ const CommentSection = ({ commentsList }) => (
         </div>
       </div>
     </form>
-    {commentsList.map((comment) => (
-      <CommentItem key={comment.id} comment={comment} />
-    ))}
+    {commentsList != undefined &&
+      commentsList.map((comment) => {
+        return <CommentItem key={comment.id} comment={comment} />;
+      })}
   </section>
 );
 

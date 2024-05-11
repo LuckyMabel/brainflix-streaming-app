@@ -1,13 +1,6 @@
 import "./CommentItem.scss";
 import Avatar from "../Avatar/Avatar";
-
-function formattedDate(timestamp) {
-  const date = new Date(timestamp);
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  const year = date.getFullYear();
-  return month + "/" + day + "/" + year;
-}
+import FormattedDate from "../FormattedDate/FormattedDate";
 
 function CommentItem({ comment }) {
   return (
@@ -17,7 +10,7 @@ function CommentItem({ comment }) {
         <div className="comment__header">
           <h3 className="comment__name">{comment.name}</h3>
           <div className="comment__date">
-            {formattedDate(comment.timestamp)}
+            <FormattedDate timestamp={comment.timestamp} />
           </div>
         </div>
         <p className="comment__text">{comment.comment}</p>

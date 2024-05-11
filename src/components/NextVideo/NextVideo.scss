@@ -11,6 +11,13 @@
     padding-top: $tablet-space-between;
   }
 
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $pri-black;
+    text-decoration: none;
+  }
+
   &__image {
     width: 7.8rem;
     margin-right: 1.28rem;
