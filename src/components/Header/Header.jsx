@@ -5,17 +5,20 @@ import searchIcon from "../../assets/icons/search.svg";
 import uploadIcon from "../../assets/icons/upload.svg";
 import Avatar from "../Avatar/Avatar";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <header className="header">
-      <a className="header__logo" href="./">
-        <img
-          className="header__logo-image"
-          src={logoImage}
-          alt="Brainflix Logo"
-        />
-      </a>
+      <div className="header__logo">
+        <Link to={"/"}>
+          <img
+            className="header__logo-image"
+            src={logoImage}
+            alt="Brainflix Logo"
+          />
+        </Link>
+      </div>
       <nav className="header__navbar">
         <div className="header__search">
           <img
@@ -31,7 +34,9 @@ function Header() {
         </div>
 
         <div className="header__button">
-          <Button iconSrc={uploadIcon} text="Upload" />
+          <Link to="/upload">
+            <Button iconSrc={uploadIcon} text="Upload" />
+          </Link>
         </div>
       </nav>
     </header>

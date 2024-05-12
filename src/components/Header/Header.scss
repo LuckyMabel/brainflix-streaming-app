@@ -12,7 +12,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2.4rem;
+    padding: 0 2.5rem;
     margin-bottom: 1rem;
   }
 
@@ -53,10 +53,10 @@
   }
 
   &__logo-image {
-    width: 37%;
+    height: 1.74rem;
 
     @include tablet {
-      width: 120%;
+      height: 1.5rem;
     }
   }
 
@@ -70,7 +70,8 @@
     flex: 1;
 
     @include tablet {
-      padding-right: $tablet-space-between;
+      padding-right: 1rem;
+      width: 11.2rem;
     }
   }
 
@@ -93,8 +94,8 @@
   &__search-icon {
     position: absolute;
     left: 0.75rem;
-    top: 0.6rem;
-    color: $pri-black;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &__search-input {
@@ -103,19 +104,23 @@
     border-radius: 0.25rem;
     padding: 0.75rem;
     width: 100%;
-    padding-left: 2.25rem;
-    height: 2.8rem;
+    padding-left: 2.5rem;
+    height: 3rem;
+    color: $pri-black;
     font-family: "AvenirNextLTPro";
 
     @include tablet {
       padding: 1rem;
       padding-left: 2.25rem;
+    }
+
+    @include desktop {
       height: 2.5rem;
     }
 
     &:active,
     &:focus {
-      border: 0.063rem solid $pri-blue;
+      border: 0.125rem solid $pri-blue;
       outline: none;
     }
   }

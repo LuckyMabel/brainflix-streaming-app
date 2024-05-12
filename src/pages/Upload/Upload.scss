@@ -1,0 +1,231 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+
+.upload {
+  border-top: 0.063rem solid $sec-mercury;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.2rem 2.5rem 1.2rem;
+
+  @include tablet {
+    padding: $tablet-padding $tablet-padding;
+  }
+
+  @include desktop {
+    align-self: center;
+    padding: 2rem 8rem;
+    margin-bottom: 18rem;
+    width: 100%;
+  }
+
+  &__title {
+    display: flex;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding-bottom: 1.8rem;
+
+    @include tablet {
+      border-bottom: 0.063rem solid $sec-mercury;
+      font-size: 2.18rem;
+    }
+
+    @include desktop {
+      font-size: 2rem;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-main {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row;
+      width: 100%;
+      border-bottom: 0.063rem solid $sec-mercury;
+      padding-bottom: 0.66rem;
+    }
+  }
+
+  &__thumbnail {
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__thumbnail-title {
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.93rem;
+    color: $pri-silver;
+
+    @include tablet {
+      font-size: 0.825rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &__thumbnail-image {
+    width: 100%;
+    border-radius: 0.25rem;
+    background-color: $sec-mercury;
+    margin-bottom: 1.3rem;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include desktop {
+      height: 11.438rem;
+      width: 30rem;
+    }
+  }
+
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      border-bottom: 0.063rem solid $sec-mercury;
+    }
+
+    @include desktop {
+      padding-left: $tablet-space-between;
+      padding-top: 2rem;
+      width: 100%;
+      border: none;
+    }
+  }
+
+  &__input-label {
+    padding-bottom: 0.25rem;
+    font-weight: 600;
+    color: $pri-silver;
+    font-size: 0.935rem;
+
+    @include tablet {
+      font-size: 0.8rem;
+      padding-bottom: 0.5rem;
+    }
+
+    @include desktop {
+      font-size: 0.77rem;
+    }
+  }
+
+  &__input-title,
+  &__input-description {
+    background-color: $sec-alabaster;
+    border: 0.063rem solid $sec-mercury;
+    padding: 0.8rem;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    font-family: "AvenirNextLTPro";
+    font-size: 1rem;
+
+    @include tablet {
+      padding: 0.88rem;
+      font-size: 0.935rem;
+    }
+
+    @include desktop {
+      font-size: 0.86rem;
+    }
+
+    &:active,
+    &:focus {
+      border: 0.125rem solid $pri-blue;
+      outline: none;
+    }
+
+    &--error {
+      border: 0.063rem solid red;
+    }
+  }
+
+  ::placeholder {
+    color: $pri-black;
+  }
+
+  &__input-title {
+    height: 3rem;
+    margin-bottom: 1rem;
+
+    @include desktop {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__input-description {
+    resize: none;
+    height: 6.8rem;
+    margin-bottom: 1.8rem;
+
+    @include tablet {
+      margin-bottom: 1.5rem;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
+      height: 5.5rem;
+    }
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: flex-end;
+      width: 100%;
+    }
+  }
+
+  &__cancel {
+    color: $pri-blue;
+    background-color: $pri-white;
+    border: none;
+    margin-top: 3rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+
+    @include tablet {
+      margin-top: 2.7rem;
+      margin-right: 4.5rem;
+      font-size: 0.8rem;
+    }
+
+    @include desktop {
+      margin-right: 4.2rem;
+    }
+  }
+
+  &__error {
+    background: pink;
+    padding: 1.25rem;
+    border-radius: 0.313rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  &__success {
+    background: lightgreen;
+    padding: 1.25rem;
+    border-radius: 0.313rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

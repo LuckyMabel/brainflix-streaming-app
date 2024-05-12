@@ -1,41 +1,23 @@
-import { useState } from "react";
 import "./App.scss";
-import videos from "./data/videos.json";
-import videoDetails from "./data/video-details.json";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home.jsx";
+import Upload from "./pages/Upload/Upload.jsx";
+import NotFound from "./pages/NotFound/NotFound.jsx";
 import Header from "./components/Header/Header.jsx";
-import VideoPlayer from "./components/VideoPlayer/VideoPlayer.jsx";
-import VideoDetails from "./components/VideoDetails/VideoDetails.jsx";
-import NextVideosList from "./components/NextVideosList/NextVideosList.jsx";
 
 function App() {
-  const [activeVideo, setActiveVideo] = useState(videoDetails[0]);
-
-  const updateActiveVideo = (selectedId) => {
-    const newActiveVideo = videoDetails.find(
-      (video) => video.id === selectedId
-    );
-    setActiveVideo(newActiveVideo);
-  };
-
-  const filteredVideosList = videos.filter(
-    (video) => video.id !== activeVideo.id
-  );
-
   return (
-    <>
-      <div className="app">
+    <div className="app">
+      <BrowserRouter>
         <Header />
-        <VideoPlayer videoSrc={activeVideo.video} image={activeVideo.image} />
-        <main className="app__main">
-          <VideoDetails videoInfo={activeVideo} />
-          <NextVideosList
-            videos={filteredVideosList}
-            updateActiveVideo={updateActiveVideo}
-          />
-        </main>
-      </div>
-    </>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="video/:videoId" element={<Home />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

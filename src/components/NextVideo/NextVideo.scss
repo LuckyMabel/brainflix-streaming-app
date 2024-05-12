@@ -4,11 +4,18 @@
 .next-video {
   display: flex;
   align-items: center;
-  padding-top: 1rem;
+  margin-top: 1rem;
   cursor: pointer;
 
   @include tablet {
-    padding-top: $tablet-space-between;
+    margin-top: $tablet-space-between;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $pri-black;
+    text-decoration: none;
   }
 
   &__image {
