@@ -1,11 +1,15 @@
 import "./Upload.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import previewSrc from "../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../assets/icons/publish.svg";
 import Button from "../../components/Button/Button";
 
 function VideoUpload() {
+  useEffect(() => {
+    document.title = "Brainflix - Upload";
+  }, []);
+
   const navigate = useNavigate();
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -15,7 +19,7 @@ function VideoUpload() {
     description: "",
   });
 
-  const handleChange = (event) => {
+  const handleOnChange = (event) => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
@@ -24,11 +28,11 @@ function VideoUpload() {
     setErrors(errors.filter((item) => item !== name));
   };
 
-  const handleCancel = () => {
+  const handleOnCancel = () => {
     navigate("/");
   };
 
-  const handleSubmit = (event) => {
+  const handleOnSubmit = (event) => {
     event.preventDefault();
     const newErrors = [];
 
@@ -53,7 +57,7 @@ function VideoUpload() {
   return (
     <section className="upload">
       <h1 className="upload__title">Upload Video</h1>
-      <form className="upload__form" onSubmit={handleSubmit}>
+      <form className="upload__form" onSubmit={handleOnSubmit}>
         <div className="upload__form-main">
           <div className="upload__thumbnail">
             <div className="upload__thumbnail-title">VIDEO THUMBNAIL</div>
@@ -68,7 +72,7 @@ function VideoUpload() {
               TITLE YOUR VIDEO
             </label>
             <input
-              onChange={handleChange}
+              onChange={handleOnChange}
               type="text"
               id="title"
               name="title"
@@ -82,7 +86,7 @@ function VideoUpload() {
               ADD A VIDEO DESCRIPTION
             </label>
             <textarea
-              onChange={handleChange}
+              onChange={handleOnChange}
               id="description"
               name="description"
               placeholder="Add a description to your video"
@@ -99,7 +103,7 @@ function VideoUpload() {
           <button
             className="upload__cancel"
             disabled={submitSuccess}
-            onClick={handleCancel}
+            onClick={handleOnCancel}
             type="button"
           >
             CANCEL

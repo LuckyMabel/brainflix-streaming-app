@@ -8,6 +8,10 @@ import Error from "../../components/Error/Error";
 import axios from "axios";
 
 function VideoPage() {
+  useEffect(() => {
+    document.title = "Brainflix - Home";
+  }, []);
+
   const { videoId } = useParams();
   const [currentVideo, setCurrentVideo] = useState({});
   const [errorOccurred, setErrorOccurred] = useState(false);
@@ -21,6 +25,7 @@ function VideoPage() {
       const response = await axios.get(videoDetailsURL);
       setCurrentVideo(response.data);
       setErrorOccurred(false);
+      window.scrollTo(0, 0);
     } catch (error) {
       setErrorOccurred(true);
     }

@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 function NotFound() {
+  useEffect(() => {
+    document.title = "Brainflix - Not Found";
+  }, []);
+
   return (
     <div>
       <h2>Page Not Found</h2>

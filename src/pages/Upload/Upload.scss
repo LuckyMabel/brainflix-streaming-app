@@ -3,7 +3,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .upload {
-  border-top: 1px solid $sec-mercury;
+  border-top: 0.063rem solid $sec-mercury;
   display: flex;
   flex-direction: column;
   padding: 1.5rem 1.2rem 2.5rem 1.2rem;
@@ -26,7 +26,7 @@
     padding-bottom: 1.8rem;
 
     @include tablet {
-      border-bottom: 1px solid $sec-mercury;
+      border-bottom: 0.063rem solid $sec-mercury;
       font-size: 2.18rem;
     }
 
@@ -47,7 +47,7 @@
     @include desktop {
       flex-direction: row;
       width: 100%;
-      border-bottom: 1px solid $sec-mercury;
+      border-bottom: 0.063rem solid $sec-mercury;
       padding-bottom: 0.66rem;
     }
   }
@@ -74,7 +74,7 @@
 
   &__thumbnail-image {
     width: 100%;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     background-color: $sec-mercury;
     margin-bottom: 1.3rem;
 
@@ -83,8 +83,8 @@
     }
 
     @include desktop {
-      height: 183px;
-      width: 480px;
+      height: 11.438rem;
+      width: 30rem;
     }
   }
 
@@ -93,7 +93,7 @@
     flex-direction: column;
 
     @include tablet {
-      border-bottom: 1px solid $sec-mercury;
+      border-bottom: 0.063rem solid $sec-mercury;
     }
 
     @include desktop {
@@ -123,9 +123,9 @@
   &__input-title,
   &__input-description {
     background-color: $sec-alabaster;
-    border: 1px solid $sec-mercury;
+    border: 0.063rem solid $sec-mercury;
     padding: 0.8rem;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     box-sizing: border-box;
     font-family: "AvenirNextLTPro";
     font-size: 1rem;
@@ -141,12 +141,12 @@
 
     &:active,
     &:focus {
-      border: 1px solid $pri-blue;
+      border: 0.125rem solid $pri-blue;
       outline: none;
     }
 
     &--error {
-      border: 1px solid red;
+      border: 0.063rem solid red;
     }
   }
 
@@ -213,18 +213,18 @@
 
   &__error {
     background: pink;
-    box-shadow: 0 0 10px grey;
-    padding: 20px;
-    border-radius: 5px;
+    box-shadow: 0 0 0.625rem grey;
+    padding: 1.25rem;
+    border-radius: 0.313rem;
     text-align: center;
     width: 100%;
   }
 
   &__success {
     background: lightgreen;
-    box-shadow: 0 0 10px green;
-    padding: 20px;
-    border-radius: 5px;
+    box-shadow: 0 0 0.625rem green;
+    padding: 1.25rem;
+    border-radius: 0.313rem;
     text-align: center;
     width: 100%;
   }

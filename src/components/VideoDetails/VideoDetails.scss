@@ -7,7 +7,7 @@
   flex-direction: column;
 
   @include tablet {
-    margin-top: 1.8rem;
+    padding-top: 1.8rem;
   }
 
   @include desktop {
