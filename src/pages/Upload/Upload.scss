@@ -213,19 +213,19 @@
 
   &__error {
     background: pink;
-    box-shadow: 0 0 0.625rem grey;
     padding: 1.25rem;
     border-radius: 0.313rem;
     text-align: center;
     width: 100%;
+    margin-top: 1rem;
   }
 
   &__success {
     background: lightgreen;
-    box-shadow: 0 0 0.625rem green;
     padding: 1.25rem;
     border-radius: 0.313rem;
     text-align: center;
     width: 100%;
+    margin-top: 1rem;
   }
 }
