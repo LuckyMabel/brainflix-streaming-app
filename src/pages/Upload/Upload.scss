@@ -193,4 +193,12 @@
     text-align: center;
     width: 100%;
   }
+
+  &__success {
+    background: lightgreen;
+    box-shadow: 0 0 10px green;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+  }
 }

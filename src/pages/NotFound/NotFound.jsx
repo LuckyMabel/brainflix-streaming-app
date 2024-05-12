@@ -1,9 +1,9 @@
 function NotFound() {
   return (
-    <>
+    <div>
       <h2>Page Not Found</h2>
-      <p>Please select a link from the list at the top of this page!</p>
-    </>
+      <p>Sorry, there is nothing to see here.</p>
+    </div>
   );
 }
 

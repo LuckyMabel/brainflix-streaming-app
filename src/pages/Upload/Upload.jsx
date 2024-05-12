@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import previewSrc from "../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../assets/icons/publish.svg";
 import Button from "../../components/Button/Button";
-import Success from "../../components/Success/Success";
 
 function VideoUpload() {
   const navigate = useNavigate();
@@ -109,7 +108,11 @@ function VideoUpload() {
           <p>Please fill in all the fields.</p>
         </div>
       )}
-      {submitSuccess && <Success />}
+      {submitSuccess && (
+        <div className="upload__success">
+          <p>Upload success!</p>
+        </div>
+      )}
     </section>
   );
 }
