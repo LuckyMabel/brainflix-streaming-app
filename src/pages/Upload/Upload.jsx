@@ -64,7 +64,9 @@ function VideoUpload() {
             />
           </div>
           <div className="upload__input-container">
-            <label htmlFor="title">TITLE YOUR VIDEO</label>
+            <label htmlFor="title" className="upload__input-label">
+              TITLE YOUR VIDEO
+            </label>
             <input
               onChange={handleChange}
               type="text"
@@ -76,7 +78,9 @@ function VideoUpload() {
                 errors.includes("title") ? "upload__input-title--error" : ""
               }`}
             />
-            <label htmlFor="description">ADD A VIDEO DESCRIPTION</label>
+            <label htmlFor="description" className="upload__input-label">
+              ADD A VIDEO DESCRIPTION
+            </label>
             <textarea
               onChange={handleChange}
               id="description"

@@ -9,15 +9,13 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <div className="app__container">
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="video/:videoId" element={<Home />} />
-            <Route path="/upload" element={<Upload />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="video/:videoId" element={<Home />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );

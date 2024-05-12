@@ -6,10 +6,9 @@
   position: relative;
   width: 100%;
   box-sizing: content-box;
-  cursor: pointer;
 
   @include tablet {
-    width: 10.8rem;
+    width: 10.4rem;
   }
 
   @include desktop {
@@ -35,7 +34,7 @@
 
   &__button {
     width: 100%;
-    min-height: 2.5rem;
+    height: 3rem;
     background-color: $pri-blue;
     color: $pri-white;
     border: none;
@@ -44,6 +43,7 @@
     font-weight: 600;
     font-size: 0.92rem;
     padding: 0 2rem;
+    cursor: pointer;
 
     @include tablet {
       font-size: 0.82rem;
@@ -51,6 +51,7 @@
 
     @include desktop {
       font-size: 0.8rem;
+      height: 2.5rem;
     }
 
     &:hover {

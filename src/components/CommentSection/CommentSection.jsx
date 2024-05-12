@@ -18,6 +18,7 @@ const CommentSection = ({ commentsList }) => (
             id="comment-text"
             name="text"
             placeholder="Add a new comment"
+            className="comment-form__textarea"
           />
           <Button iconSrc={addCommentIcon} text="Comment" />
         </div>
