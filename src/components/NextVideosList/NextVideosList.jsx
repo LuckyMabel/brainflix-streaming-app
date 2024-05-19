@@ -3,29 +3,30 @@ import NextVideo from "../NextVideo/NextVideo";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 function NextVideosList({ activeVideoId }) {
   const [videos, setVideos] = useState([]);
   const [errorOccurred, setErrorOccurred] = useState(false);
 
-  const apiURL = "https://unit-3-project-api-0a5620414506.herokuapp.com/videos";
-  const apiKey = "d384cc61-a4cb-4d06-8613-981d4f20b68a";
-
-  const fetchVideos = async () => {
-    try {
-      const videosApiURL = `${apiURL}?api_key=${apiKey}`;
-      const response = await axios.get(videosApiURL);
-      const videos = response.data;
-      const filteredVideos = videos.filter(
-        (video) => video.id !== activeVideoId
-      );
-      setVideos(filteredVideos);
-      setErrorOccurred(false);
-    } catch (error) {
-      setErrorOccurred(true);
-    }
-  };
-
   useEffect(() => {
+    const videosApiURL = `${BASE_URL}/videos`;
+
+    const fetchVideos = async () => {
+      try {
+        const response = await axios.get(videosApiURL);
+        const videos = response.data;
+        const filteredVideos = videos.filter(
+          (video) => video.id !== activeVideoId
+        );
+        setVideos(filteredVideos);
+        setErrorOccurred(false);
+      } catch (error) {
+        console.error("Error fetching videos:", error);
+        setErrorOccurred(true);
+      }
+    };
+
     fetchVideos();
   }, [activeVideoId]);
 

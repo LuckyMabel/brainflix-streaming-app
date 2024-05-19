@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import previewSrc from "../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../assets/icons/publish.svg";
 import Button from "../../components/Button/Button";
+import axios from "axios";
+
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 function VideoUpload() {
   useEffect(() => {
@@ -12,45 +15,59 @@ function VideoUpload() {
 
   const navigate = useNavigate();
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [errors, setErrors] = useState([]);
+  const [formErrors, setFormErrors] = useState([]);
 
-  const [formData, setFormData] = useState({
-    title: "",
-    description: "",
-  });
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
-  const handleOnChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-    setErrors(errors.filter((item) => item !== name));
+  const handleOnTitleChange = (event) => {
+    setFormErrors(formErrors.filter((item) => item !== "title"));
+    setTitle(event.target.value);
+  };
+
+  const handleOnDescriptionChange = (event) => {
+    setFormErrors(formErrors.filter((item) => item !== "description"));
+    setDescription(event.target.value);
   };
 
   const handleOnCancel = () => {
     navigate("/");
   };
 
-  const handleOnSubmit = (event) => {
-    event.preventDefault();
-    const newErrors = [];
+  const handleOnUploadVideo = async () => {
+    try {
+      await axios.post(BASE_URL + `/videos/`, {
+        title: title,
+        description: description,
+        image: "images/Upload-video-preview.jpg",
+      });
 
-    if (formData.title.trim() === "") {
-      newErrors.push("title");
-    }
-
-    if (formData.description.trim() === "") {
-      newErrors.push("description");
-    }
-
-    if (newErrors.length === 0) {
       setSubmitSuccess(true);
       setTimeout(() => {
         navigate("/");
       }, 3000);
+    } catch {
+      setFormErrors(["API Error"]);
+    }
+  };
+
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+
+    const errors = [];
+
+    if (title.trim() === "") {
+      errors.push("title");
+    }
+
+    if (description.trim() === "") {
+      errors.push("description");
+    }
+
+    if (errors.length === 0) {
+      handleOnUploadVideo();
     } else {
-      setErrors(newErrors);
+      setFormErrors(errors);
     }
   };
 
@@ -72,27 +89,27 @@ function VideoUpload() {
               TITLE YOUR VIDEO
             </label>
             <input
-              onChange={handleOnChange}
+              onChange={handleOnTitleChange}
               type="text"
               id="title"
               name="title"
               placeholder="Add a title to your video"
-              value={formData.title}
+              value={title}
               className={`upload__input-title ${
-                errors.includes("title") ? "upload__input-title--error" : ""
+                formErrors.includes("title") ? "upload__input-title--error" : ""
               }`}
             />
             <label htmlFor="description" className="upload__input-label">
               ADD A VIDEO DESCRIPTION
             </label>
             <textarea
-              onChange={handleOnChange}
+              onChange={handleOnDescriptionChange}
               id="description"
               name="description"
               placeholder="Add a description to your video"
-              value={formData.description}
+              value={description}
               className={`upload__input-description ${
-                errors.includes("description")
+                formErrors.includes("description")
                   ? "upload__input-description--error"
                   : ""
               }`}
@@ -111,9 +128,14 @@ function VideoUpload() {
           <Button iconSrc={publishIcon} text="Publish" />
         </div>
       </form>
-      {errors.length > 0 && (
+      {formErrors.length > 0 && (
         <div className="upload__error">
-          <p>Please fill in all the fields.</p>
+          <p>Please enter all fields.</p>
+        </div>
+      )}
+      {formErrors.includes("API Error") && (
+        <div className="upload__error">
+          <p>Something went wrong on the API server.</p>
         </div>
       )}
       {submitSuccess && (

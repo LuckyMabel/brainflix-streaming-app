@@ -45,7 +45,7 @@ function VideoDetails({ videoInfo }) {
       <div className="video-details__comment-num">
         {comments ? comments.length : 0} Comments
       </div>
-      <CommentSection commentsList={comments} />
+      <CommentSection commentsList={comments} activeVideoId={videoInfo.id} />
     </section>
   );
 }

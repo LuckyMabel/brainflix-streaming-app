@@ -2,6 +2,8 @@ import "./CommentItem.scss";
 import Avatar from "../Avatar/Avatar";
 import FormattedDate from "../FormattedDate/FormattedDate";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 function CommentItem({ comment }) {
   return (
     <article className="comment" id={comment.id}>
