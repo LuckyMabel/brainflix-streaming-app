@@ -4,7 +4,7 @@ import likesIcon from "../../assets/icons/likes.svg";
 import CommentSection from "../CommentSection/CommentSection";
 import FormattedDate from "../FormattedDate/FormattedDate";
 
-function VideoDetails({ videoInfo }) {
+function VideoDetails({ videoInfo, handleRefresh }) {
   const { title, channel, timestamp, views, likes, description, comments } =
     videoInfo;
 
@@ -45,7 +45,11 @@ function VideoDetails({ videoInfo }) {
       <div className="video-details__comment-num">
         {comments ? comments.length : 0} Comments
       </div>
-      <CommentSection commentsList={comments} activeVideoId={videoInfo.id} />
+      <CommentSection
+        commentsList={comments}
+        activeVideoId={videoInfo.id}
+        handleRefresh={handleRefresh}
+      />
     </section>
   );
 }

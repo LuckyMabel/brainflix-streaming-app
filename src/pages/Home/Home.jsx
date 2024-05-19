@@ -17,6 +17,7 @@ function VideoPage() {
   const { videoId } = useParams();
   const [currentVideo, setCurrentVideo] = useState({});
   const [errorOccurred, setErrorOccurred] = useState(false);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     const fetchVideo = async (id) => {
@@ -44,13 +45,17 @@ function VideoPage() {
     } else {
       fetchDefaultVideo();
     }
-  }, [videoId]);
+  }, [videoId, refresh]);
+
+  const handleRefresh = () => {
+    setRefresh((prev) => !prev);
+  };
 
   return (
-    <main className="video">
+    <main className="video-page">
       <VideoPlayer videoSrc={currentVideo.video} image={currentVideo.image} />
-      <div className="video__body">
-        <VideoDetails videoInfo={currentVideo} />
+      <div className="video-page__details">
+        <VideoDetails videoInfo={currentVideo} handleRefresh={handleRefresh} />
         <NextVideosList activeVideoId={currentVideo.id} />
       </div>
       {errorOccurred && <Error />}
