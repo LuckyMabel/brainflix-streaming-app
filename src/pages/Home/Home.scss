@@ -4,6 +4,7 @@
 .video-page {
   display: flex;
   flex-direction: column;
+  font-family: "AvenirNextLTPro";
 
   @include desktop {
     display: flex;
